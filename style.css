@@ -1,0 +1,112 @@
+body {
+  font-family: sans-serif;
+}
+
+.nav-link {
+  padding-left: 0px;
+}
+
+.navbar {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.navbar_img {
+  width: 128px;
+  height: 38px;
+}
+
+.navbar_span {
+  padding-left: 5px;
+  font-size: 20px;
+  color: #8d8d8d;
+}
+
+.navbar_icon {
+  color: #8d8d8d;
+}
+
+/* ----------------------------- */
+
+.container_text {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.container-fluid {
+  padding-left: 0px;
+}
+
+.container_bg {
+  background-color: #916000;
+}
+
+.navbar2_span {
+  color: white;
+  font-size: 18px;
+}
+
+/* ------------------------------------------ */
+
+.card {
+  border: none;
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 255px;
+}
+
+.bi-heart-fill {
+  color: #916000;
+}
+
+.bi-cart-fill {
+  color: #916000;
+  padding-left: 4px;
+}
+
+.card-span-text {
+  color: #8d8d8d;
+}
+
+.pagination {
+  padding-top: 20px;
+}
+
+.num_a {
+  padding-left: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.num_a:hover {
+  color: #916000;
+}
+
+.num_a:focus {
+  color: #916000;
+  text-decoration: underline;
+}
+
+.input {
+  background-color: #916000;
+}
+
+.subscription {
+  background-image: url("https://images.unsplash.com/photo-1532413992378-f169ac26fff0?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center left;
+  padding: 312px 0 112px;
+}
+
+.container-footer {
+  background-color: #916000;
+}
+
+.footer-li {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
