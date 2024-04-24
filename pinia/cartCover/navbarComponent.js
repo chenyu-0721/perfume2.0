@@ -1,5 +1,5 @@
 import productsStore from "../store/productsStore.js";
-const { mapState, mapActions } = Pinia;
+const { mapState } = Pinia;
 
 export default {
   template: ` 
