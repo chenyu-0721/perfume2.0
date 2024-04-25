@@ -47,27 +47,27 @@ export default {
         <div class=" d-flex flex-wrap navbar2_bg ">
             <ul class="container navbar2_container nav nav-pills">
                 <li class="nav-item">
-                    <a href="#/allmenu" class="nav-link " aria-current="page">
+                    <a href="#" class="nav-link " aria-current="page">
                         <span class="navbar2_span">全部商品</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#ocean" class="nav-link " aria-current="page">
+                    <a href="#" class="nav-link " aria-current="page">
                         <span class="navbar2_span">清新海洋</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#board" class="nav-link " aria-current="page">
+                    <a href="#" class="nav-link " aria-current="page">
                         <span class="navbar2_span">木質</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#flower" class="nav-link " aria-current="page">
+                    <a href="#" class="nav-link " aria-current="page">
                         <span class="navbar2_span">花香調</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#fruit" class="nav-link " aria-current="page">
+                    <a href="#" class="nav-link " aria-current="page">
                         <span class="navbar2_span">果香調</span>
                     </a>
                 </li>          
