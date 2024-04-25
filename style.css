@@ -181,3 +181,72 @@ body {
 .card-bg {
   background: #e0e0e0;
 }
+
+.perfumeOne-image {
+  width: 555px;
+  height: 555px;
+  object-fit: cover;
+}
+
+.perfumesecond-image {
+  width: 520px;
+  height: 730px;
+  object-fit: cover;
+}
+
+.perfumeother-image {
+  width: 555px;
+  height: 1080px;
+  object-fit: cover;
+}
+/* productInformation  */
+
+.infor-text-title {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.infor-text-content {
+  font-size: 20px;
+}
+
+.infor-input {
+  width: 160px;
+  height: 50px;
+}
+
+.infor-button {
+  width: 190px;
+  height: 50px;
+  font-size: 16px;
+  color: white;
+  border: #916000;
+  background-color: #916000;
+  align-items: center;
+  justify-content: center;
+}
+
+.infor-heart-content {
+  font-size: 16px;
+}
+
+.infor-second-text-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.infor-second-text-content {
+  font-size: 16px;
+}
+
+.infor-image {
+  width: 730px;
+  height: 460px;
+  object-fit: cover;
+}
+
+.infor-second-image {
+  width: 320px;
+  height: 640px;
+  object-fit: cover;
+}
