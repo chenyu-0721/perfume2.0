@@ -102,8 +102,9 @@ export default {
 </div>
 
 
-<div class="album py-5 card-bg ">
-<div class="container">
+<div class="card-bg">
+<div class="album py-5 ">
+<div class="container ">
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3   ">
         <div class="col ">
@@ -144,7 +145,7 @@ export default {
 </div>
 </div>
 
-
+</div>
 
 <div class="container marketing pt-5 pb-5">
 <div class="row featurette">
