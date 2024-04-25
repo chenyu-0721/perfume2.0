@@ -34,13 +34,13 @@ export default {
 <nav aria-label="...">
   <ul class="pagination justify-content-center">
       <li class="page-item">
-          <span class=""><a href="#" class="num_a">1</a></span>
+          <span class=""><a href="#/allmenu" class="num_a">1</a></span>
       </li>
       <li class="page-item">
-          <span class=""><a href="#" class="num_a">2</a></span>
+          <span class=""><a href="#/allmenu" class="num_a">2</a></span>
       </li>
       <li class="page-item">
-          <span class=""><a href="#" class="num_a">3</a></span>
+          <span class=""><a href="#/allmenu" class="num_a">3</a></span>
       </li>
   </ul>
 </nav>
