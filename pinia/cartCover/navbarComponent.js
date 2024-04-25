@@ -12,34 +12,29 @@ export default {
               <ul class="container navbar2_container nav nav-pills">
                   <li class="nav-item">
                       <a href="#" class="nav-link " aria-current="page">
-                          <span class="navbar2_span">CHANEL</span>
+                          <span class="navbar2_span">全部商品</span>
                       </a>
                   </li>
                   <li class="nav-item">
                       <a href="#" class="nav-link " aria-current="page">
-                          <span class="navbar2_span">Jo Malone</span>
+                          <span class="navbar2_span">清新海洋</span>
                       </a>
                   </li>
                   <li class="nav-item">
                       <a href="#" class="nav-link " aria-current="page">
-                          <span class="navbar2_span">Curology</span>
+                          <span class="navbar2_span">木質</span>
                       </a>
                   </li>
                   <li class="nav-item">
                       <a href="#" class="nav-link " aria-current="page">
-                          <span class="navbar2_span">Dior</span>
+                          <span class="navbar2_span">花香調</span>
                       </a>
                   </li>
                   <li class="nav-item">
                       <a href="#" class="nav-link " aria-current="page">
-                          <span class="navbar2_span">Chloe</span>
+                          <span class="navbar2_span">果香調</span>
                       </a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="#" class="nav-link " aria-current="page">
-                          <span class="navbar2_span">ZARA</span>
-                      </a>
-                  </li>
+                  </li>          
               </ul>
           </div>
       </div>
@@ -87,10 +82,10 @@ export default {
 
 
 <section class="subscription">
-<div class="container" data-v-c6d36319="">
-  <div class="row" data-v-c6d36319="">
+<div class="container" >
+  <div class="row" >
       <div class="col-md-4">
-          <h3 class="fs-1 fw-bold c_gray mb-4">記得<br data-v-c6d36319="">訂閱以獲取更多資訊！</h3>
+          <h3 class="fs-1 fw-bold c_gray mb-4">記得<br>訂閱以獲取更多資訊！</h3>
           <div class="input d-flex"><input class="email-input" type="text" placeholder="Your email address"><a
                   class="subscription-btn text-white w-100 d-flex justify-content-center align-items-center"
                   href="javascript:;">Subscribe</a>

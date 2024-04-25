@@ -25,13 +25,13 @@ export default {
               </li>
               <li class="nav-item">
                   <a href="#" class="nav-link " aria-current="page">
-                      <i class="bi bi-heart-fill navbar_icon"></i>
+                      <i class="bi bi-heart navbar_icon"></i>
                       <span class="navbar_span">Wishlist</span>
                   </a>
               </li>
               <li class="nav-item">
                   <a href="#" class="nav-link " aria-current="page">
-                      <i class="bi bi-cart-fill navbar_icon"></i>
+                      <i class="bi bi-cart navbar_icon"></i>
                       <span class="navbar_span">Cart(3)</span>
                   </a>
               </li>

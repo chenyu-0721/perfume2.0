@@ -8,7 +8,6 @@
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.37/vue.global.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 
@@ -16,86 +15,64 @@
 
 <body class="bg-lighter">
 
-    <div class="">
-        <div class="">
-            <main class="col post">
+    <div id="app">
 
 
-                <div id="app">
+        <Cover-Component></Cover-Component>
+        <!-- <router-view></router-view> -->
 
-
-                    <Cover-Component></Cover-Component>
-                    <router-view></router-view>
-
-                    <Footer-Component></Footer-Component>
-
-
-                </div>
-
-
-                <script src=" https://cdnjs.cloudflare.com/ajax/libs/vue-demi/0.13.11/index.iife.js"></script>
-                <script>const I = VueDemi; const vueDemi = VueDemi;</script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/pinia/2.0.22/pinia.iife.js"></script>
-                <script src="https://unpkg.com/vue-router@4.0.5/dist/vue-router.global.js"></script>
-                <!-- JavaScript Bundle with Popper -->
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-                    crossorigin="anonymous"></script>
-                <script type="module">
-
-
-
-
-                    import CoverComponent from './pinia/cartCover/coverComponent.js'
-                    import NavbarComponent from './pinia/cartCover/navbarComponent.js'
-
-                    import FooterComponent from './pinia/footer/footerComponent.js'
-
-                    const { createApp } = Vue;
-                    const { createPinia } = Pinia
-
-
-
-
-                    const routes = [
-                        { path: '/', component: NavbarComponent },
-                    ];
-
-
-
-
-                    const router = VueRouter.createRouter({
-                        history: VueRouter.createWebHashHistory(),
-                        routes: routes
-                    });
-
-                    const app = createApp({
-                        components: {
-                            CoverComponent,
-                            NavbarComponent,
-                            FooterComponent
-                        },
-
-                    });
-
-
-
-                    const pinia = createPinia();
-                    app.use(router)
-                    app.use(pinia)
-                    app.mount('#app')
-
-                </script>
-
-
-                <style>
-
-                </style>
-            </main>
+        <div class="position-relative overflow-hidden p-4 p-md-5  first_img ">
+            <div class="col-md-5 p-lg-5 my-5 pt-5 first-block text-center text-md-start">
+                <h1 class="display-4 fw-normal first-title">Perfume your day</h1>
+                <p class="lead fw-normal first-content">A perfume is like a piece of clothing, a <br>
+                    message, a way of presenting oneself<br>
+                    a costume that according to the <br>
+                    person who wears it.</p>
+                <a class="btn first-btn" href="#">Shop now</a>
+            </div>
+            <div class="product-device shadow-sm d-none d-md-block"></div>
+            <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
         </div>
+
+
+
+
+
+
+        <section class="subscription">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3 class="fs-1 fw-bold c_gray mb-4">記得<br>訂閱以獲取更多資訊！</h3>
+                        <div class="input d-flex"><input class="email-input" type="text"
+                                placeholder="Your email address"><a
+                                class="subscription-btn text-white w-100 d-flex justify-content-center align-items-center"
+                                href="javascript:;">Subscribe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <Footer-Component></Footer-Component>
+
+
     </div>
 
-    </footer>
+    <!-- Vue script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.37/vue.global.prod.js"></script>
+
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/vue-demi/0.13.11/index.iife.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pinia/2.0.22/pinia.iife.js"></script>
+    <script src="https://unpkg.com/vue-router@4.0.5/dist/vue-router.global.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script type="module" src="./app.js"></script>
+
 
 </body>
 
