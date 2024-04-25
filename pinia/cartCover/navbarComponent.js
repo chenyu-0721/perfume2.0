@@ -5,41 +5,7 @@ export default {
   template: ` 
   
 
-  <div>
-  <div class="album  ">
-      <div class="container_bg  ">
-          <div class=" d-flex flex-wrap navbar2_bg ">
-              <ul class="container navbar2_container nav nav-pills">
-                  <li class="nav-item">
-                      <a href="#" class="nav-link " aria-current="page">
-                          <span class="navbar2_span">全部商品</span>
-                      </a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="#" class="nav-link " aria-current="page">
-                          <span class="navbar2_span">清新海洋</span>
-                      </a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="#" class="nav-link " aria-current="page">
-                          <span class="navbar2_span">木質</span>
-                      </a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="#" class="nav-link " aria-current="page">
-                          <span class="navbar2_span">花香調</span>
-                      </a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="#" class="nav-link " aria-current="page">
-                          <span class="navbar2_span">果香調</span>
-                      </a>
-                  </li>          
-              </ul>
-          </div>
-      </div>
-  </div>
-</div>
+ 
 
 
 <div class="album py-5 ">
