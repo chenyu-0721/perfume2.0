@@ -58,6 +58,10 @@ export default {
   <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 my-4">
           <table class="table align-middle">
+                        <td>
+                          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#patchStaticBackdrop"
+                              >新增</button>
+                        </td>
               <tbody>
                   <tr>
                       <td>圖片</td>
@@ -89,6 +93,7 @@ export default {
   </div>
 </div>
 
+
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -117,13 +122,54 @@ export default {
 
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">返回</button>
               <button type="button" @click="handleButtonClick(getPerfumeData._id)" class="btn btn-primary"
-                  data-bs-dismiss="modal">Save changes</button>
+                  data-bs-dismiss="modal">儲存</button>
           </div>
       </div>
   </div>
 </div>
+
+<div class="modal fade" id="patchStaticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">編輯資料</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <div>
+                  <p>香水照片：<input type="text" class="perfume-image-post" ></p>
+              </div>
+
+              <div>
+                  <p>香水名稱：<input type="text" class="perfume-title1-post" ></p>
+              </div>
+
+              <div>
+                  <p>香水類別：<input type="text" class="perfume-category-post" ></p>
+              </div>
+
+              <div>
+                  <p>香水價錢：<input type="text" class="perfume-price-post" ></p>
+              </div>
+
+              <div>
+                  <p>香水容量：<input type="text" class="perfume-unit-post" ></p>
+              </div>
+
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">返回</button>
+              <button type="button" @click="postDataCotent()" class="btn btn-primary"
+                  data-bs-dismiss="modal">新增</button>
+          </div>
+      </div>
+  </div>
+</div>
+
 
 
 
@@ -133,7 +179,7 @@ export default {
       .get("https://perfume-express-pty3.onrender.com/posts")
       .then((response) => {
         this.perfume = response.data.data;
-        console.log(this.perfume[0]._id);
+        // console.log(this.perfume[0]._id);
       })
       .catch((error) => {
         console.error("An error occurred:", error);
@@ -144,6 +190,7 @@ export default {
       "removeCardItem",
       "updateCardItem",
       "handleButtonClick",
+      "postDataCotent",
     ]), // 取出方法
   },
   computed: {
