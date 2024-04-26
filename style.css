@@ -58,6 +58,9 @@ body {
   height: 255px;
 }
 
+.card-title {
+  font-weight: bold;
+}
 .bi-heart-fill {
   color: #916000;
 }
@@ -248,5 +251,11 @@ body {
 .infor-second-image {
   width: 320px;
   height: 640px;
+  object-fit: cover;
+}
+
+.table-image {
+  width: 75px;
+  height: 75px;
   object-fit: cover;
 }

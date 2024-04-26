@@ -1,11 +1,13 @@
-import CoverComponent from "./pinia/cartCover/coverComponent.js";
 import NavbarComponent from "./pinia/cartCover/navbarComponent.js";
-import FooterComponent from "./pinia/footer/footerComponent.js";
+import cartComponent from "./pinia/cartCover/cartComponent.js";
 
 const { createApp } = Vue;
 const { createPinia } = Pinia;
 
-const routes = [{ path: "/", component: NavbarComponent }];
+const routes = [
+  { path: "/", component: NavbarComponent },
+  { path: "/cart", component: cartComponent },
+];
 
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHashHistory(),
@@ -14,9 +16,8 @@ const router = VueRouter.createRouter({
 
 const app = createApp({
   components: {
-    CoverComponent,
     NavbarComponent,
-    FooterComponent,
+    cartComponent,
   },
 });
 

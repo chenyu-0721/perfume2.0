@@ -100,7 +100,7 @@ export default defineStore("productsStore", {
   }),
   getters: {
     sortProducts: ({ products }) => {
-      return products; 
+      return products;
     },
   },
 });
