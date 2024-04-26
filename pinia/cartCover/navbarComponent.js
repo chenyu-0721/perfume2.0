@@ -6,7 +6,6 @@ export default {
   data() {
     return {
       perfume: [], // 在 data 选项中定义 perfume
-     
     };
   },
   template: ` 
@@ -46,11 +45,11 @@ export default {
                   </a>
               </li>
               <li class="nav-item">
-              <a href="#/cart" class="nav-link " aria-current="page">
-                  <i class="bi bi-gear navbar_icon"></i>
-                  <span class="navbar_span">後台</span>
-              </a>
-          </li>
+                <a href="#/cart" class="nav-link " aria-current="page">
+                    <i class="bi bi-gear navbar_icon"></i>
+                    <span class="navbar_span">後台</span>
+                </a>
+            </li>
           </ul>
       </div>
   </div>
