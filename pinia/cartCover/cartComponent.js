@@ -1,6 +1,3 @@
-import cartStore from "../store/cartStore.js";
-const { mapActions, mapState } = Pinia;
-
 export default {
   data() {
     return {
@@ -86,15 +83,7 @@ export default {
                               data-bs-toggle="modal" data-bs-target="#staticBackdrop">編輯
                           </button>
                       </td>
-                  </tr>
-              </tbody>
-          </table>
-      </div>
-  </div>
-</div>
-
-
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content">
@@ -105,30 +94,39 @@ export default {
           <div class="modal-body">
 
               <div>
-                  <p>香水名稱：<input type="text" class="perfume-title1" :value="getPerfumeData.title"></p>
+                  <p>香水名稱：<input type="text" class="perfume-title1" :value="item.title"></p>
               </div>
 
               <div>
-                  <p>香水類別：<input type="text" class="perfume-category" :value="getPerfumeData.category"></p>
+                  <p>香水類別：<input type="text" class="perfume-category" :value="item.category"></p>
               </div>
 
               <div>
-                  <p>香水價錢：<input type="text" class="perfume-price" :value="getPerfumeData.price"></p>
+                  <p>香水價錢：<input type="text" class="perfume-price" :value="item.price"></p>
               </div>
 
               <div>
-                  <p>香水容量：<input type="text" class="perfume-unit" :value="getPerfumeData.unit"></p>
+                  <p>香水容量：<input type="text" class="perfume-unit" :value="item.unit"></p>
               </div>
 
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">返回</button>
-              <button type="button" @click="handleButtonClick(getPerfumeData._id)" class="btn btn-primary"
+              <button type="button" @click="savePatchButtonClick(item._id)" class="btn btn-primary"
                   data-bs-dismiss="modal">儲存</button>
           </div>
       </div>
   </div>
 </div>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+
+
+
 
 <div class="modal fade" id="patchStaticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -162,7 +160,7 @@ export default {
 
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">返回</button>
+              <button type="button" @click="closePostButtonClick()" class="btn btn-secondary" data-bs-dismiss="modal">返回</button>
               <button type="button" @click="postDataCotent()" class="btn btn-primary"
                   data-bs-dismiss="modal">新增</button>
           </div>
@@ -186,14 +184,121 @@ export default {
       });
   },
   methods: {
-    ...mapActions(cartStore, [
-      "removeCardItem",
-      "updateCardItem",
-      "handleButtonClick",
-      "postDataCotent",
-    ]), // 取出方法
+    removeCardItem(id) {
+      // console.log("id", id);
+      axios
+        .delete(`https://perfume-express-pty3.onrender.com/posts/${id}`)
+        .then((response) => {
+          try {
+            console.log("刪除成功", response);
+            this.fetchPerfumeData();
+            alert("刪除成功");
+          } catch {
+            console.error("刪除失敗", error);
+          }
+        })
+        .catch((error) => {
+          console.log("删除失败:", error);
+        });
+    },
+
+    updateCardItem(data) {
+      this.perfumedata = data;
+    },
+
+    postDataCotent() {
+      const newImage = document.querySelector(".perfume-image-post").value;
+      const newTitle = document.querySelector(".perfume-title1-post").value;
+      const newCategory = document.querySelector(
+        ".perfume-category-post"
+      ).value;
+      const newPrice = document.querySelector(".perfume-price-post").value;
+      const newUnit = document.querySelector(".perfume-unit-post").value;
+
+      // 创建包含需要更新的字段的对象
+      const postdData = {
+        image: newImage,
+        title: newTitle,
+        category: newCategory,
+        price: newPrice,
+        unit: newUnit,
+      };
+
+      // 使用 axios.patch 方法发送更新请求
+      axios
+        .post(`https://perfume-express-pty3.onrender.com/posts`, postdData)
+        .then((response) => {
+          try {
+            console.log("新增成功", response);
+            this.fetchPerfumeData();
+            alert("新增成功");
+          } catch {
+            console.error("新增失敗", error);
+          }
+        })
+        .catch((error) => {
+          console.log("新增失敗:", error);
+        });
+    },
+
+    closePostButtonClick() {
+      document.querySelector(".perfume-image-post").value = "";
+      document.querySelector(".perfume-title1-post").value = "";
+      document.querySelector(".perfume-category-post").value = "";
+      document.querySelector(".perfume-price-post").value = "";
+      document.querySelector(".perfume-unit-post").value = "";
+    },
+
+    savePatchButtonClick(id) {
+      const newTitle = document.querySelector(".perfume-title1").value;
+      const newCategory = document.querySelector(".perfume-category").value;
+      const newPrice = document.querySelector(".perfume-price").value;
+      const newUnit = document.querySelector(".perfume-unit").value;
+
+      // 创建包含需要更新的字段的对象
+      const updatedData = {
+        title: newTitle,
+        category: newCategory,
+        price: newPrice,
+        unit: newUnit,
+      };
+
+      // 使用 axios.patch 方法发送更新请求
+      axios
+        .patch(
+          `https://perfume-express-pty3.onrender.com/posts/${id}`,
+          updatedData
+        )
+        .then((response) => {
+          try {
+            console.log("更新成功", response);
+            this.fetchPerfumeData();
+            alert("更新成功");
+          } catch {
+            console.error("更新失敗", error);
+          }
+        })
+        .catch((error) => {
+          console.error("更新失败:", error);
+        });
+    },
+
+    fetchPerfumeData() {
+      axios
+        .get("https://perfume-express-pty3.onrender.com/posts")
+        .then((response) => {
+          this.perfume = response.data.data;
+          // console.log(this.perfume[0]._id);
+        })
+        .catch((error) => {
+          console.error("An error occurred:", error);
+        });
+    },
   },
-  computed: {
-    ...mapState(cartStore, ["getPerfumeData"]),
+
+  getters: {
+    getPerfumeData: ({ perfumedata }) => {
+      return perfumedata;
+    },
   },
 };
