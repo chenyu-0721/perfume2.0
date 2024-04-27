@@ -2,6 +2,7 @@ export default {
   data() {
     return {
       perfume: [], // 在 data 选项中定义 perfume
+      perfumedata: "",
     };
   },
   template: `
@@ -66,9 +67,10 @@ export default {
                       <td>類別</td>
                       <td>價錢</td>
                       <td>容量</td>
+                      <td>啟用</td>
                       <td>編輯/刪除</td>
                   </tr>
-                  <tr v-for="(item) in perfume">
+                  <tr v-for="(item) in perfume" :key="item.id">
                       <td>
                           <img :src="item.image" class="table-image" alt="">
                       </td>
@@ -76,6 +78,7 @@ export default {
                       <td>{{item.category}}</td>
                       <td>{{item.price}}</td>
                       <td>{{item.unit}}</td>
+                      <td>{{item.is_enabled}}</td>
                       <td>
                           <button type="button" class="btn btn-danger"
                               @click="removeCardItem(item._id)">刪除</button>
@@ -83,7 +86,15 @@ export default {
                               data-bs-toggle="modal" data-bs-target="#staticBackdrop">編輯
                           </button>
                       </td>
-                      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                      
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content">
@@ -94,37 +105,34 @@ export default {
           <div class="modal-body">
 
               <div>
-                  <p>香水名稱：<input type="text" class="perfume-title1" :value="item.title"></p>
+                  <p>香水名稱：<input type="text" class="perfume-title-patch" v-model="perfumedata.title"></p>
               </div>
 
               <div>
-                  <p>香水類別：<input type="text" class="perfume-category" :value="item.category"></p>
+                  <p>香水類別：<input type="text" class="perfume-category-patch" v-model="perfumedata.category"></p>
               </div>
 
               <div>
-                  <p>香水價錢：<input type="text" class="perfume-price" :value="item.price"></p>
+                  <p>香水價錢：<input type="text" class="perfume-price-patch" v-model="perfumedata.price"></p>
               </div>
 
               <div>
-                  <p>香水容量：<input type="text" class="perfume-unit" :value="item.unit"></p>
+                  <p>香水容量：<input type="text" class="perfume-unit-patch" v-model="perfumedata.unit"></p>
+              </div>
+
+              <div>
+                  <p>香水啟用：<input type="checkbox" class="perfume-isEnabled-patch" v-model="perfumedata.is_enabled"></p>
               </div>
 
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">返回</button>
-              <button type="button" @click="savePatchButtonClick(item._id)" class="btn btn-primary"
+              <button type="button" @click="savePatchButtonClick(perfumedata._id)" class="btn btn-primary"
                   data-bs-dismiss="modal">儲存</button>
           </div>
       </div>
   </div>
 </div>
-                  </tr>
-              </tbody>
-          </table>
-      </div>
-  </div>
-</div>
-
 
 
 
@@ -143,7 +151,7 @@ export default {
               </div>
 
               <div>
-                  <p>香水名稱：<input type="text" class="perfume-title1-post" ></p>
+                  <p>香水名稱：<input type="text" class="perfume-title-post" ></p>
               </div>
 
               <div>
@@ -157,6 +165,10 @@ export default {
               <div>
                   <p>香水容量：<input type="text" class="perfume-unit-post" ></p>
               </div>
+
+              <div>
+              <p>香水啟用：<input type="checkbox" class="perfume-isEnabled-post"></p>
+            </div>
 
           </div>
           <div class="modal-footer">
@@ -203,17 +215,21 @@ export default {
     },
 
     updateCardItem(data) {
-      this.perfumedata = data;
+      this.perfumedata = { ...data };
+      console.log("update", this.perfumedata.title);
     },
 
     postDataCotent() {
       const newImage = document.querySelector(".perfume-image-post").value;
-      const newTitle = document.querySelector(".perfume-title1-post").value;
+      const newTitle = document.querySelector(".perfume-title-post").value;
       const newCategory = document.querySelector(
         ".perfume-category-post"
       ).value;
       const newPrice = document.querySelector(".perfume-price-post").value;
       const newUnit = document.querySelector(".perfume-unit-post").value;
+      const newIsEnabled = document.querySelector(
+        ".perfume-isEnabled-post"
+      ).checked;
 
       // 创建包含需要更新的字段的对象
       const postdData = {
@@ -222,6 +238,7 @@ export default {
         category: newCategory,
         price: newPrice,
         unit: newUnit,
+        is_enabled: newIsEnabled,
       };
 
       // 使用 axios.patch 方法发送更新请求
@@ -243,24 +260,32 @@ export default {
 
     closePostButtonClick() {
       document.querySelector(".perfume-image-post").value = "";
-      document.querySelector(".perfume-title1-post").value = "";
+      document.querySelector(".perfume-title-post").value = "";
       document.querySelector(".perfume-category-post").value = "";
       document.querySelector(".perfume-price-post").value = "";
       document.querySelector(".perfume-unit-post").value = "";
+      document.querySelector(".perfume-isEnabled-post").checked = false;
     },
 
     savePatchButtonClick(id) {
-      const newTitle = document.querySelector(".perfume-title1").value;
-      const newCategory = document.querySelector(".perfume-category").value;
-      const newPrice = document.querySelector(".perfume-price").value;
-      const newUnit = document.querySelector(".perfume-unit").value;
+      const newTitle = document.querySelector(".perfume-title-patch").value;
+      const newCategory = document.querySelector(
+        ".perfume-category-patch"
+      ).value;
+      const newPrice = document.querySelector(".perfume-price-patch").value;
+      const newUnit = document.querySelector(".perfume-unit-patch").value;
+      const newIsEnabled = document.querySelector(
+        ".perfume-isEnabled-patch"
+      ).checked;
 
+      console.log("newIsEnabled", newIsEnabled);
       // 创建包含需要更新的字段的对象
       const updatedData = {
         title: newTitle,
         category: newCategory,
         price: newPrice,
         unit: newUnit,
+        is_enabled: newIsEnabled,
       };
 
       // 使用 axios.patch 方法发送更新请求
