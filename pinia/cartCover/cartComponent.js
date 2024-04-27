@@ -202,7 +202,7 @@ export default {
         .delete(`https://perfume-express-pty3.onrender.com/posts/${id}`)
         .then((response) => {
           try {
-            console.log("刪除成功", response);
+            // console.log("刪除成功", response);
             this.fetchPerfumeData();
             alert("刪除成功");
           } catch {
@@ -210,13 +210,13 @@ export default {
           }
         })
         .catch((error) => {
-          console.log("删除失败:", error);
+          console.log("刪除失敗:", error);
         });
     },
 
     updateCardItem(data) {
       this.perfumedata = { ...data };
-      console.log("update", this.perfumedata.title);
+    //   console.log("update", this.perfumedata.title);
     },
 
     postDataCotent() {
@@ -246,7 +246,7 @@ export default {
         .post(`https://perfume-express-pty3.onrender.com/posts`, postdData)
         .then((response) => {
           try {
-            console.log("新增成功", response);
+            // console.log("新增成功", response);
             this.fetchPerfumeData();
             alert("新增成功");
           } catch {
@@ -278,7 +278,7 @@ export default {
         ".perfume-isEnabled-patch"
       ).checked;
 
-      console.log("newIsEnabled", newIsEnabled);
+    //   console.log("newIsEnabled", newIsEnabled);
       // 创建包含需要更新的字段的对象
       const updatedData = {
         title: newTitle,
@@ -296,7 +296,7 @@ export default {
         )
         .then((response) => {
           try {
-            console.log("更新成功", response);
+            // console.log("更新成功", response);
             this.fetchPerfumeData();
             alert("更新成功");
           } catch {
