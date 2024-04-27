@@ -142,7 +142,7 @@ export default {
       <div class="modal-content">
           <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">編輯資料</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button type="button" @click="closePostButtonClick()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
 
@@ -216,7 +216,7 @@ export default {
 
     updateCardItem(data) {
       this.perfumedata = { ...data };
-    //   console.log("update", this.perfumedata.title);
+      //   console.log("update", this.perfumedata.title);
     },
 
     postDataCotent() {
@@ -248,6 +248,7 @@ export default {
           try {
             // console.log("新增成功", response);
             this.fetchPerfumeData();
+            this.closePostButtonClick();
             alert("新增成功");
           } catch {
             console.error("新增失敗", error);
@@ -278,7 +279,7 @@ export default {
         ".perfume-isEnabled-patch"
       ).checked;
 
-    //   console.log("newIsEnabled", newIsEnabled);
+      //   console.log("newIsEnabled", newIsEnabled);
       // 创建包含需要更新的字段的对象
       const updatedData = {
         title: newTitle,
@@ -298,6 +299,7 @@ export default {
           try {
             // console.log("更新成功", response);
             this.fetchPerfumeData();
+
             alert("更新成功");
           } catch {
             console.error("更新失敗", error);
