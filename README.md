@@ -8,6 +8,15 @@
 ![image](https://github.com/chenyu-0721/perfume2.0.github.io/assets/59197038/9c566e02-d039-4a38-be63-1aaf797cfc7d)
 
 
+
+
+# 前台
+  - 可看到所有的香水商品
+
+# 後台
+  - 管理者可透過後台新增、編輯、刪除商品
+
+
  # 專案技術
   - HTML
   - CSS
