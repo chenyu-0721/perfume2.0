@@ -53,8 +53,33 @@ export default {
   </div>
 </nav>
 
+<div class="album py-5 bg-light"  v-if="isLoading">
+  <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 my-4">
+          <table class="table align-middle">
+              <tbody>
+                  <tr v-for="(item) in perfume" :key="item.id" class="placeholder-glow">
+                      <td>
+                        <div style="width: 75px; height:75px; background-color: #ccc;"></div>
 
-<div class="album py-5 bg-light">
+                      </td>
+                      <td><span class="placeholder col-4"></span></td>
+                      <td><span class="placeholder col-4"></span></td>
+                      <td><span class="placeholder col-4"></span></td>
+                      <td><span class="placeholder col-4"></span></td>
+                      <td><span class="placeholder col-4"></span></td>
+                      <td>
+                      <span class="placeholder col-5">
+                      </td>               
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+
+
+<div class="album py-5 bg-light" v-else>
   <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 my-4">
           <table class="table align-middle">
@@ -72,7 +97,7 @@ export default {
                       <td>啟用</td>
                       <td>編輯/刪除</td>
                   </tr>
-                  <tr v-for="(item) in perfume" :key="item.id">
+                  <tr v-for="(item) in perfume" :key="item.id" >
                       <td>
                           <img :src="item.image" class="table-image" alt="">
                       </td>
@@ -95,6 +120,8 @@ export default {
       </div>
   </div>
 </div>
+
+
 
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -191,6 +218,7 @@ export default {
       .get("https://perfume-express-pty3.onrender.com/posts")
       .then((response) => {
         this.perfume = response.data.data;
+        this.isLoading = false;
         // console.log(this.perfume[0]._id);
       })
       .catch((error) => {
@@ -317,6 +345,7 @@ export default {
         .get("https://perfume-express-pty3.onrender.com/posts")
         .then((response) => {
           this.perfume = response.data.data;
+
           // console.log(this.perfume[0]._id);
         })
         .catch((error) => {

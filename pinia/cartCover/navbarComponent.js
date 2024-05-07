@@ -91,7 +91,33 @@ export default {
 
 
 
-<div class="album py-5 " v-if="!isLoading">
+
+<div class="album py-5 " v-if="isLoading">
+    <div class="container">
+      <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 g-3">
+        <div class="col" v-for="index in 8">
+          <div class="card">
+          <div style="width: auto; height:250px; background-color: #ccc;"></div>
+
+            <div class="card-body">
+              <h5 class="card-title placeholder-glow">
+                <span class="placeholder col-6"></span>
+              </h5>
+              <p class="card-text placeholder-glow">
+                <span class="placeholder col-7"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-8"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="album py-5 " v-else>
   <div class="container ">
       <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 g-3  ">
           <div class="col " v-for="product in perfume">
@@ -116,31 +142,6 @@ export default {
       </div>
   </div>
 </div>
-
-<div v-else>
-<div class="container ">
-<div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 g-3  ">
-    <div class="col " v-for="product in perfume">
-        <div class="card" aria-hidden="true">
-            <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title placeholder-glow">
-                <span class="placeholder col-6"></span>
-            </h5>
-            <p class="card-text placeholder-glow">
-                <span class="placeholder col-7"></span>
-                <span class="placeholder col-4"></span>
-                <span class="placeholder col-4"></span>
-                <span class="placeholder col-6"></span>
-                <span class="placeholder col-8"></span>
-            </p>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-
 
 <section class="subscription">
   <div class="container">
