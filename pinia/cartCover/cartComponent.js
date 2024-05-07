@@ -3,6 +3,7 @@ export default {
     return {
       perfume: [], // 在 data 选项中定义 perfume
       perfumedata: "",
+      isLoading: true,
     };
   },
   template: `
@@ -51,6 +52,7 @@ export default {
       </div>
   </div>
 </nav>
+
 
 <div class="album py-5 bg-light">
   <div class="container">
