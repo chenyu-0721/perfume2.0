@@ -1,5 +1,7 @@
 # 六角學院單人專題審核 -- 香水購物平台
+  - Github Page ：https://chenyu-0721.github.io/perfume2.0.github.io/#/
 設計稿透過六角學院取得
+
 
 ## 畫面
 
