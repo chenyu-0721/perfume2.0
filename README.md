@@ -15,7 +15,7 @@
     2. 搜尋 Live Server 並下載
 
 # 運行專案
-    點選右下角Go Live
+    點選右下角 Go Live
 
 # 資料夾說明
   - img：圖片檔案
