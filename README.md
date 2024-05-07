@@ -7,20 +7,6 @@
 ![image](https://github.com/chenyu-0721/perfume2.0.github.io/assets/59197038/3584f1d8-8d61-480e-9a3a-35c063edf12d)
 ![image](https://github.com/chenyu-0721/perfume2.0.github.io/assets/59197038/9c566e02-d039-4a38-be63-1aaf797cfc7d)
 
-# 安裝套件
-    npm install
-
-# 安裝VsCode套件
-    1. 左方工作列點選 Extensions 
-    2. 搜尋 Live Server 並下載
-
-# 運行專案
-    點選右下角 Go Live
-
-# 資料夾說明
-  - img：圖片檔案
-  - pinia：程式碼位置
-  - app.js：Vue-Router
 
  # 專案技術
   - HTML
