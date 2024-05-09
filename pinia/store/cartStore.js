@@ -14,10 +14,10 @@ export default defineStore("card", {
         .delete(`https://perfume-express-pty3.onrender.com/posts/${id}`)
         .then((response) => {
           this.perfume = response.data.data;
-          alert("删除成功");
+          alert("刪除成功");
         })
         .catch((error) => {
-          console.log("删除失败:", error);
+          console.log("刪除失敗:", error);
         });
     },
 
