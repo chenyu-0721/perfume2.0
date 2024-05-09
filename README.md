@@ -18,7 +18,7 @@
 - 配合上述利用Axios透過HTTP請求將GET, POST, DELETE, PATCH的數據傳遞給後端後並呈現在畫面上
 
 ### Vue 3.2.37
-- 透過雙向數據綁定取得香水編輯前原本的數據
+- 透過雙向數據綁定取得香水編輯時原本的數據
 - Vue-router 管控路由
 
 ### Bootstrap-placeholder
