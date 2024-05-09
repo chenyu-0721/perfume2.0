@@ -40,11 +40,11 @@
 ### 後端技術
 - Express Code： https://github.com/chenyu-0721/perfume_express
 
-## 歡迎至Demo後台試試新增、編輯、刪除
+### 歡迎至Demo後台試試新增、編輯、刪除
 - Github Page ：https://chenyu-0721.github.io/perfume2.0.github.io/#/
 
 ## 圖片來源
-- [香水設計稿](https://xd.adobe.com/view/dc5ebe5c-3e56-4981-a010-158b5ded0e72-890d/screen/5a91b149-daae-4a58-8bee-81e4524aac17/)
+- [六角學院--香水設計稿](https://xd.adobe.com/view/dc5ebe5c-3e56-4981-a010-158b5ded0e72-890d/screen/5a91b149-daae-4a58-8bee-81e4524aac17/)
 
 ## 關於作者
 - 暱稱：點點
