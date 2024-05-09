@@ -46,6 +46,12 @@
 ## 圖片來源
 - [六角學院--香水設計稿](https://xd.adobe.com/view/dc5ebe5c-3e56-4981-a010-158b5ded0e72-890d/screen/5a91b149-daae-4a58-8bee-81e4524aac17/)
 
+## 關於香水購物平台
+- 網站名稱：香水購物平台
+- 網站描述：香水商品，後台管理
+- 網站網址：https://chenyu-0721.github.io/perfume2.0.github.io/#/
+- 網站狀態：可進行瀏覽
+
 ## 關於作者
 - 暱稱：點點
 - 狀態：前端開發一年學習者
