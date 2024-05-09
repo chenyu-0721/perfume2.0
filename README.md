@@ -35,7 +35,7 @@
 ![image](https://github.com/chenyu-0721/perfume2.0.github.io/assets/59197038/df3150d3-3611-4f86-b58f-b4ba9554db52)
 
 ### 新增，編輯，刪除
-![image](https://github.com/chenyu-0721/perfume2.0.github.io/assets/59197038/2ab1e48a-5a93-4072-86b2-c12cccda439e)
+![未命名1](https://github.com/chenyu-0721/perfume2.0.github.io/assets/59197038/d48e8dc3-f5b4-476a-8f91-a8b92074b873)
 
 ### 後端技術
 - Express Code： https://github.com/chenyu-0721/perfume_express
