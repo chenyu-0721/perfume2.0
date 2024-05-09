@@ -1,5 +1,28 @@
 # 六角學院單人專題審核 -- 香水購物平台 
+透過六角學院的審核設計稿，製作具有RWD以及前後端功能的香水平台
   - Github Page ：https://chenyu-0721.github.io/perfume2.0.github.io/#/
+
+## 專業技術：
+![html]()
+![css](https://github.com/chenyu-0721/monster.github.io/assets/59197038/8903a514-6d7f-428d-897d-fa229dc34627)
+![js](https://github.com/chenyu-0721/monster.github.io/assets/59197038/39419656-8228-4425-a14f-d5b905761dba)
+![vue](https://github.com/chenyu-0721/monster.github.io/assets/59197038/58c05753-168c-4ec1-a4cf-09f47455f91c)
+![bootstrap](https://github.com/chenyu-0721/perfume2.0.github.io/assets/59197038/f1fbda3e-1820-493d-8227-c70946290c35)
+
+
+
+
+  - HTML
+  - CSS
+  - JavaScript
+  - Vue 3.2.37
+  - Vue-Router
+  - Pinia 2.0.22
+  - Bootstrap 5.1.1
+  - Bootstrap-icons 1.7.2
+  - axios 1.6.8
+
+
 
 ## 畫面
 
@@ -18,15 +41,7 @@
 
 
  # 專案技術
-  - HTML
-  - CSS
-  - JavaScript
-  - Vue 3.2.37
-  - Vue-Router
-  - Pinia 2.0.22
-  - Bootstrap 5.1.1
-  - Bootstrap-icons 1.7.2
-  - axios 1.6.8
+
 # 後端技術
   - Express Code： https://github.com/chenyu-0721/perfume_express
 
